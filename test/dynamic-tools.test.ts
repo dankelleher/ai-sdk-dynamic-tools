@@ -142,7 +142,7 @@ describe("dynamicTools", () => {
 			expect(result.prepareStep).toBeUndefined();
 		});
 
-		it("returns pass-through messages when no refresh has occurred", () => {
+		it("returns undefined (no overrides) when no refresh has occurred", () => {
 			const { prepareStep } = dynamicTools({
 				tools: { a: {} } as unknown as ToolSet,
 				refreshTools: async () => ({}) as ToolSet,
@@ -155,8 +155,7 @@ describe("dynamicTools", () => {
 			const messages = [{ role: "user" as const, content: "hello" }];
 			const result = prepareStep?.(makeStepOptions(messages));
 
-			// Messages returned unchanged (no notification appended)
-			expect(result).toEqual({ messages });
+			expect(result).toBeUndefined();
 		});
 
 		it("appends a user message after refresh (static string)", async () => {
@@ -226,9 +225,9 @@ describe("dynamicTools", () => {
 			const first = prepareStep?.(makeStepOptions(messages, 1));
 			expect(first?.messages).toHaveLength(2);
 
-			// Second call — flag cleared, pass-through
+			// Second call — flag cleared, pass-through (undefined = no overrides)
 			const second = prepareStep?.(makeStepOptions(messages, 2));
-			expect(second).toEqual({ messages });
+			expect(second).toBeUndefined();
 		});
 	});
 });

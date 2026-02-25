@@ -72,7 +72,7 @@ export const dynamicTools = <TOOLS extends ToolSet>(
 	const prepareStep: PrepareStepFunction<TOOLS> | undefined =
 		config.refreshMessage
 			? ({ messages }) => {
-					if (!pendingRefreshMessage) return { messages };
+					if (!pendingRefreshMessage) return undefined;
 
 					const notification = pendingRefreshMessage;
 					pendingRefreshMessage = null;
