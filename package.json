@@ -1,6 +1,6 @@
 {
 	"name": "ai-sdk-dynamic-tools",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Mid-conversation tool refreshing for Vercel AI SDK's generateText/streamText",
 	"type": "module",
 	"main": "./dist/index.cjs",
@@ -44,5 +44,18 @@
 		"tool-refresh",
 		"generateText"
 	],
-	"license": "MIT"
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dankelleher/ai-sdk-dynamic-tools.git"
+	},
+	"homepage": "https://github.com/dankelleher/ai-sdk-dynamic-tools#readme",
+	"bugs": {
+		"url": "https://github.com/dankelleher/ai-sdk-dynamic-tools/issues"
+	},
+	"author": "Daniel Kelleher",
+	"engines": {
+		"node": ">=18"
+	},
+	"sideEffects": false
 }
