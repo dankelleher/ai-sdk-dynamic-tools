@@ -2,6 +2,7 @@
 	"name": "ai-sdk-dynamic-tools",
 	"version": "0.1.2",
 	"description": "Mid-conversation tool refreshing for Vercel AI SDK's generateText/streamText",
+	"packageManager": "pnpm@10.23.0",
 	"type": "module",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
